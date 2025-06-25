@@ -219,6 +219,18 @@ Return mongodb username
 {{- end -}}
 
 {{/*
+Return mongodb protocol
+*/}}
+{{- define "novu.mongodb.protocol" -}}
+{{- if .Values.mongodb.enabled -}}
+    {{- print (index .Values.mongodb.protocol ) -}}
+{{- else -}}
+    {{- print .Values.externalDatabase.protocol -}}
+{{- end -}}
+{{- end -}}
+
+
+{{/*
 Return mongodb username
 */}}
 {{- define "novu.mongodb.password" -}}
