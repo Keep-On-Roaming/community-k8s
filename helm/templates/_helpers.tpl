@@ -229,6 +229,16 @@ Return mongodb protocol
 {{- end -}}
 {{- end -}}
 
+{{/*
+Return mongodb url
+*/}}
+{{- define "novu.mongodb.url" -}}
+{{- if (eq (include "novu.mongodb.protocol" .) "mongodb+srv://") -}}
+    {{- print (include "novu.mongodb.protocol" .) (include  "novu.mongodb.username" .) ":" (include  "novu.mongodb.password" .) "@" (include  "novu.mongodb.host" .) "/" (include  "novu.mongodb.database" .) -}}
+{{- else -}}
+    {{- print (include "novu.mongodb.protocol" .) (include  "novu.mongodb.username" .) ":" (include  "novu.mongodb.password" .) "@" (include  "novu.mongodb.host" .) ":" (include  "novu.mongodb.port" .) "/" (include  "novu.mongodb.database" .) -}}
+{{- end -}}
+{{- end -}}
 
 {{/*
 Return mongodb username
