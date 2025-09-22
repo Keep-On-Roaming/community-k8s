@@ -1718,10 +1718,12 @@ store:
 ## @param mongodb.auth.passwords Array of Password for custom users to create
 ## @param mongodb.auth.databases  Array of Name for custom databases to create
 ## @param mongodb.architecture mongodb architecture (`standalone` or `replication`)
+## @param mongodb.protocol mongodb protocol (`mongodb://` or `mongodb+srv://`)
 ## ref : https://docs.bitnami.com/kubernetes/infrastructure/mongodb/get-started/understand-architecture/
 mongodb:
   enabled: false
   architecture: standalone
+  protocol: mongodb://
   auth:
     enabled: true
     usernames:
@@ -1767,12 +1769,15 @@ localstack:
 ## @param externalDatabase.username Username for external mongoDB database
 ## @param externalDatabase.password Password for external mongoDB database
 ## @param externalDatabase.database Database name for external mongoDB database
+## @param externalDatabase.protocol mongodb protocol (`mongodb://` or `mongodb+srv://`)
 externalDatabase:
   host: mongodb.local
   port: 27017
   username: 'novu'
   password: ''
   database: novu-db
+  protocol: mongodb+srv://
+  
 
 ## @section External redis configuration
 ##
