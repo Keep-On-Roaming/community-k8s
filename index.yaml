@@ -2,6 +2,39 @@ apiVersion: v1
 entries:
   novu:
   - apiVersion: v2
+    appVersion: 2.3.2
+    created: "2025-11-12T16:12:08.559051867Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 17.x.x
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 13.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    - condition: localstack.enabled
+      name: localstack
+      repository: https://localstack.github.io/helm-charts
+      version: 0.4.x
+    description: A Helm Chart for novu
+    digest: 7f012d87789d4fedc325cce3b15826873ff25de3ca682f78866a92c476467b94
+    home: https://novu.co/
+    keywords:
+    - novu
+    - notification framework
+    name: novu
+    sources:
+    - https://github.com/novuhq/novu/tree/next/docker/kubernetes/helm
+    urls:
+    - https://github.com/Keep-On-Roaming/community-k8s/releases/download/novu-0.1.11/novu-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
     appVersion: 2.3.1
     created: "2025-11-12T14:12:42.783495173Z"
     dependencies:
@@ -67,4 +100,4 @@ entries:
     urls:
     - https://github.com/Keep-On-Roaming/community-k8s/releases/download/novu-0.1.9/novu-0.1.9.tgz
     version: 0.1.9
-generated: "2025-11-12T14:12:42.783508979Z"
+generated: "2025-11-12T16:12:08.559071344Z"
